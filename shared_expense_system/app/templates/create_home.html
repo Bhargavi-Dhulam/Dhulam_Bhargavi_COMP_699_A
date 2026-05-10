@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h2>Create New Home</h2>
+
+    <form method="POST" action="/create_home">
+
+        <div class="form-group">
+            <label for="home_name">Home Name</label>
+            <input type="text" id="home_name" name="home_name" placeholder="Enter home name" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Create Home</button>
+
+    </form>
+
+    <div class="form-footer">
+        <a href="/dashboard" class="btn-link">Back to Dashboard</a>
+    </div>
+
+</div>
+
+{% endblock %}

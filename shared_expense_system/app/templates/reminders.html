@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="report-wrapper">
+
+    <div class="report-card">
+
+        <h2>Pending Payments</h2>
+
+        {% if reminders and reminders|length > 0 %}
+
+        <table class="report-table">
+            <tr>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Description</th>
+            </tr>
+
+            {% for r in reminders %}
+            <tr>
+                <td>₹{{ r.amount }}</td>
+                <td>{{ r.category }}</td>
+                <td>{{ r.description }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% else %}
+            <div class="empty-box">
+                <p>No pending payments </p>
+            </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

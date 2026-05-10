@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <h2>Dashboard</h2>
+
+    <div class="dashboard-actions">
+        <a href="/create_home" class="btn-primary">Create Home</a>
+        <a href="/join_home" class="btn-secondary">Join Home</a>
+    </div>
+
+    <div class="home-section">
+
+        <h3>Your Shared Homes</h3>
+
+        {% if home_data and home_data|length > 0 %}
+
+            <div class="home-grid">
+
+                {% for item in home_data %}
+                <div class="home-card">
+
+                    <!-- Home Name -->
+                    <h4>{{ item.home.home_name }}</h4>
+
+                    <!-- Home ID -->
+                    <p class="home-id">
+                        <strong>Home ID:</strong> {{ item.home.home_id }}
+                    </p>
+
+                    <p class="home-note">
+                        Share this ID with roommates to join
+                    </p>
+
+                    <!-- Roommates -->
+                    <div class="roommate-section">
+                        <p><strong>Roommates:</strong></p>
+
+                        {% if item.members and item.members|length > 0 %}
+                            <ul class="roommate-list">
+                                {% for user in item.members %}
+                                    <li>{{ user.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>No roommates yet</p>
+                        {% endif %}
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="home-buttons">
+                        <a href="/add_expense/{{ item.home.home_id }}" class="btn-link">Add Expense</a>
+                        <a href="/report/{{ item.home.home_id }}" class="btn-link">View Report</a>
+                        <a href="/balances/{{ item.home.home_id }}" class="btn-link">View Balances</a>
+                    </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-state">
+                <p>You are not part of any home yet.</p>
+                <p>Create a new home or join an existing one to start tracking expenses.</p>
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

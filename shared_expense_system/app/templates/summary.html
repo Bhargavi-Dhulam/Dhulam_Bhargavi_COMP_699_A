@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="report-container">
+
+    <h2>Payment Reminders</h2>
+
+    {% if reminders and reminders|length > 0 %}
+
+        <table class="report-table">
+            <tr>
+                <th>Reminder ID</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+
+            {% for reminder in reminders %}
+            <tr>
+                <td>{{ reminder.reminder_id }}</td>
+                <td>{{ reminder.status }}</td>
+                <td>{{ reminder.send_date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    {% else %}
+
+        <p>No pending reminders. All payments are up to date.</p>
+
+    {% endif %}
+
+    <div class="form-footer">
+        <a href="/dashboard" class="btn-link">Back to Dashboard</a>
+    </div>
+
+</div>
+
+{% endblock %}

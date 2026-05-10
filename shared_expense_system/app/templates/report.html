@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="report-wrapper">
+
+    <div class="report-card">
+
+        <h2>Expense Report</h2>
+
+        <!-- EXPENSE TABLE -->
+        {% if expenses and expenses|length > 0 %}
+
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Added By</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for e in expenses %}
+                <tr>
+                    <td>₹{{ e.amount }}</td>
+                    <td>{{ e.category }}</td>
+                    <td>{{ e.description }}</td>
+                    <td>{{ e.added_by }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+
+        <div class="empty-box">
+            <p>No expenses found for this home.</p>
+        </div>
+
+        {% endif %}
+
+        <div class="report-footer">
+            <a href="/dashboard" class="btn-secondary">Back to Dashboard</a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
