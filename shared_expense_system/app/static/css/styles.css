@@ -1,0 +1,353 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f4f6f8;
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* MAIN LAYOUT */
+.container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* DASHBOARD */
+.dashboard-container {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.dashboard-container h2 {
+    margin-bottom: 10px;
+}
+
+/* ACTION BUTTONS */
+.dashboard-actions {
+    margin: 20px 0;
+}
+
+/* BUTTONS */
+.btn-primary,
+.btn-secondary {
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+}
+
+.btn-secondary {
+    background: #7f8c8d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #636e72;
+}
+
+/* HOME GRID */
+.home-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* HOME CARD */
+.home-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: 0.3s;
+}
+
+.home-card:hover {
+    transform: translateY(-5px);
+}
+
+/* CARD TITLE */
+.home-card h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* HOME DETAILS */
+.home-id {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.home-note {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+/* ROOMMATES */
+.roommate-section {
+    margin-top: 10px;
+}
+
+.roommate-list {
+    padding-left: 18px;
+    margin-top: 5px;
+}
+
+.roommate-list li {
+    font-size: 14px;
+}
+
+/* CARD LINKS */
+.home-card a {
+    display: block;
+    margin-top: 6px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.home-card a:hover {
+    text-decoration: underline;
+}
+
+/* FORM */
+.form-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* INPUT */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* FORM BUTTON */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background: #2980b9;
+}
+
+/* REPORT */
+.report-container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* TABLE */
+.report-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.report-table th {
+    background: #ecf0f1;
+    font-weight: 600;
+}
+
+.report-table th,
+.report-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* EMPTY STATE */
+.empty-state {
+    margin-top: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* FLASH MESSAGES */
+.flash-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.flash {
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.flash.success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.flash.error {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.flash.warning {
+    background-color: #f39c12;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .home-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+}
+
+/* REPORT PAGE CENTER */
+.report-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+/* BIG CARD */
+.report-card {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* TITLE */
+.report-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* TABLE */
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.report-table th {
+    background: #3498db;
+    color: white;
+    padding: 12px;
+}
+
+.report-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* EMPTY STATE */
+.empty-box {
+    text-align: center;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+.report-footer {
+    margin-top: 20px;
+    text-align: center;
+}
